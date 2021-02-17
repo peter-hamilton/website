@@ -1,0 +1,52 @@
+# Site settings
+title: Peter Hamilton
+description: "Peter Hamilton's website."
+keywords: "peter hamilton" #separated by commas
+skills: "Software Engineer"
+meta_author: Hamilton Peter
+
+# Google webmaster tools
+google_verify:
+
+google_tracking_id: UA-55026340-1
+
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Getform.io id
+contact_getform_id: eaf072c2-a4ef-442e-8d12-634c54552f8c
+
+
+# Footer settings
+footer:
+  copyright: Peter Hamilton
+  location: Location
+  social: Around the Web
+  credits: Credits
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: Linkedin
+    icon: fa-linkedin
+    url: https://www.linkedin.com/in/p-hamilton
+  - title: Github
+    icon: fa-github
+    url: https://github.com/peter-hamilton
+  - title: Google Scholar
+    icon: fa-graduation-cap
+    url: https://scholar.google.com/citations?user=V_ve5V4AAAAJ
+  # - title: bitbucket
+  #   url: https://bitbucket.org/peterhamilton
+  # - title: stack-overflow
+  #   url: https://stackoverflow.com/users/15066381
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+collections:
+  projects:
+    order:
+      - conductor.md
+      - phenoblocks.md
+      - broker.md
