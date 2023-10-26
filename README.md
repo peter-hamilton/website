@@ -23,7 +23,6 @@ All gem dependencies should be contained `github-pages` gem ([versions](https://
 
 ## Test
 
-- To run locally, comment out `baseurl` and `url` lines in `_config.yml`
 - Run: `bundle exec jekyll serve --livereload`
   - If there is a load error, try ```bundle add webrick```
 
