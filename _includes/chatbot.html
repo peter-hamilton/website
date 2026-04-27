@@ -376,27 +376,9 @@
       body: JSON.stringify({ message: text })
     }).then(function (response) {
       if (!response.ok) throw new Error('API error: ' + response.status);
-      var reader = response.body.getReader();
-      var decoder = new TextDecoder();
-      var accumulated = '';
-
-      function pump() {
-        return reader.read().then(function (result) {
-          if (result.done) return accumulated;
-          var chunk = decoder.decode(result.value, { stream: true });
-          chunk.split('\n').forEach(function (line) {
-            if (line.startsWith('data: ')) {
-              var payload = line.slice(6).trim();
-              if (payload && payload !== '[DONE]') {
-                accumulated += payload;
-                if (onChunk) onChunk(accumulated);
-              }
-            }
-          });
-          return pump();
-        });
-      }
-      return pump();
+      return response.json();
+    }).then(function (data) {
+      return data.reply;
     }).catch(function (err) {
       console.error('[chatbot] error:', err);
       return 'Sorry, something went wrong. Please try again.';
